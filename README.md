@@ -1,4 +1,4 @@
-# 🏊 Piscine Day 01 – 1337 Coding School
+# 🏊 Piscine – 1337 Coding School
 
 Welcome to my first project during the **1337 Piscine** — a 26-day coding bootcamp designed to challenge and grow technical skills through hands-on experience.
 
