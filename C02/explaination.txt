@@ -1,0 +1,441 @@
+C02 EX00 -> EX10
+DETAILED EXPLANATION IN ENGLISH
+
+========================================
+EX00 - ft_strcpy
+========================================
+
+Prototype:
+char *ft_strcpy(char *dest, char *src);
+
+Goal:
+Copy the string src into dest.
+
+Example:
+src = "Hello"
+
+The function copies character by character:
+dest[0] = src[0]
+dest[1] = src[1]
+...
+
+When src[i] is '\0', the loop stops.
+The '\0' must also be copied.
+
+Code:
+
+char *ft_strcpy(char *dest, char *src)
+{
+    int i;
+
+    i = 0;
+    while (src[i])
+    {
+        dest[i] = src[i];
+        i++;
+    }
+    dest[i] = '\0';
+    return (dest);
+}
+
+Memory:
+src:  [H][e][l][l][o][\0]
+dest: [?][?][?][?][?][?]
+
+After copying:
+dest: [H][e][l][l][o][\0]
+
+========================================
+EX01 - ft_strncpy
+========================================
+
+Prototype:
+char *ft_strncpy(char *dest, char *src, unsigned int n);
+
+Goal:
+Copy a maximum of n characters.
+
+Example:
+src = "Hi"
+n = 5
+
+Result:
+dest = "Hi\0\0\0"
+
+First loop:
+Copy characters while i < n and src[i] is not '\0'.
+
+Second loop:
+If src is shorter than n, fill the remaining positions with '\0'.
+
+Difference:
+strcpy copies until '\0'.
+strncpy copies at most n characters and fills remaining positions with '\0'.
+
+========================================
+EX02 - ft_str_is_alpha
+========================================
+
+Prototype:
+int ft_str_is_alpha(char *str);
+
+Goal:
+Check if every character is a letter.
+
+Allowed:
+'a' to 'z'
+'A' to 'Z'
+
+Examples:
+"Hello"  -> 1
+"Hello1" -> 0
+"Hello!" -> 0
+
+Logic:
+Check every character.
+If one character is not a letter, return 0 immediately.
+If the loop finishes, return 1.
+
+========================================
+EX03 - ft_str_is_numeric
+========================================
+
+Prototype:
+int ft_str_is_numeric(char *str);
+
+Goal:
+Check if every character is a digit.
+
+Allowed:
+'0' to '9'
+
+Examples:
+"12345" -> 1
+"123a"  -> 0
+
+The condition checks whether each character is between '0' and '9'.
+
+========================================
+EX04 - ft_str_is_lowercase
+========================================
+
+Prototype:
+int ft_str_is_lowercase(char *str);
+
+Goal:
+Check if every character is lowercase.
+
+Allowed:
+'a' to 'z'
+
+Examples:
+"hello" -> 1
+"Hello" -> 0
+"hello1" -> 0
+
+========================================
+EX05 - ft_str_is_uppercase
+========================================
+
+Prototype:
+int ft_str_is_uppercase(char *str);
+
+Goal:
+Check if every character is uppercase.
+
+Allowed:
+'A' to 'Z'
+
+Examples:
+"HELLO" -> 1
+"Hello" -> 0
+
+========================================
+EX06 - ft_str_is_printable
+========================================
+
+Prototype:
+int ft_str_is_printable(char *str);
+
+Goal:
+Check if every character is printable.
+
+Printable ASCII characters are from 32 to 126.
+
+32 = space ' '
+126 = '~'
+
+Characters such as '\n' and '\t' are control characters and are not printable.
+
+Example:
+"Hello!" -> 1
+"Hello\n" -> 0
+
+========================================
+EX07 - ft_strupcase
+========================================
+
+Prototype:
+char *ft_strupcase(char *str);
+
+Goal:
+Convert every lowercase letter to uppercase.
+
+ASCII:
+'a' = 97
+'A' = 65
+
+Difference:
+97 - 65 = 32
+
+Therefore:
+lowercase - 32 = uppercase
+
+Example:
+"Hello World!"
+becomes:
+"HELLO WORLD!"
+
+Only lowercase letters change.
+Numbers, spaces, and symbols stay the same.
+
+========================================
+EX08 - ft_strlowcase
+========================================
+
+Prototype:
+char *ft_strlowcase(char *str);
+
+Goal:
+Convert every uppercase letter to lowercase.
+
+ASCII:
+'A' = 65
+'a' = 97
+
+Therefore:
+uppercase + 32 = lowercase
+
+Example:
+"HELLO 123!"
+becomes:
+"hello 123!"
+
+========================================
+EX09 - ft_strcapitalize
+========================================
+
+Prototype:
+char *ft_strcapitalize(char *str);
+
+Goal:
+Capitalize the first letter of every word.
+Convert the other letters of each word to lowercase.
+
+A word is made of letters and digits.
+A separator is anything else, such as:
+space, '-', '+', ',', ';', etc.
+
+Example:
+"hi, how are you? 42words forty-two; fifty+and+one"
+
+becomes:
+"Hi, How Are You? 42words Forty-Two; Fifty+And+One"
+
+We use a variable such as:
+
+int start;
+
+start = 1 means:
+The next letter is at the beginning of a word.
+
+start = 0 means:
+We are inside a word.
+
+General logic:
+
+if current character is alphanumeric:
+    if start == 1 and character is lowercase:
+        convert it to uppercase
+    else if start == 0 and character is uppercase:
+        convert it to lowercase
+    start = 0
+else:
+    start = 1
+
+Example:
+"hello WORLD"
+
+'h' is the first character:
+'h' becomes 'H'
+
+The space is a separator:
+start becomes 1.
+
+'W' is the first character of the next word.
+The other letters are converted to lowercase.
+
+Result:
+"Hello World"
+
+Important:
+A number can be the first character of a word.
+
+Example:
+"42words"
+
+The '4' starts the word.
+Therefore 'w' is not the first character and stays lowercase.
+
+========================================
+EX10 - ft_strlcpy
+========================================
+
+Prototype:
+unsigned int ft_strlcpy(char *dest, char *src, unsigned int size);
+
+Goal:
+Copy characters safely from src to dest.
+
+The maximum number of characters copied is:
+size - 1
+
+One position must remain for '\0'.
+
+Example:
+src = "Hello"
+size = 4
+
+dest becomes:
+"Hel"
+
+The function returns the length of the original src.
+
+"Hello" has length 5.
+So the function returns 5.
+
+Important:
+If size == 0:
+Do not write anything to dest.
+Still return the length of src.
+
+General logic:
+
+unsigned int ft_strlcpy(char *dest, char *src, unsigned int size)
+{
+    unsigned int i;
+    unsigned int len;
+
+    i = 0;
+    len = 0;
+
+    while (src[len])
+        len++;
+
+    if (size != 0)
+    {
+        while (src[i] != '\0' && i < size - 1)
+        {
+            dest[i] = src[i];
+            i++;
+        }
+        dest[i] = '\0';
+    }
+    return (len);
+}
+
+Example:
+src = "Oubaha"
+size = 4
+
+dest becomes:
+"Oub"
+
+The function returns:
+6
+
+because the original src length is 6.
+
+========================================
+IMPORTANT C CONCEPTS
+========================================
+
+1. Strings are arrays of characters.
+
+char str[] = "Hello";
+
+Memory:
+[H][e][l][l][o][\0]
+
+The '\0' marks the end of the string.
+
+2. i is an index.
+
+str[0] = first character
+str[1] = second character
+
+3. while (str[i]) means:
+
+while str[i] is not '\0'
+
+4. Return values:
+
+0 = false / invalid
+1 = true / valid
+
+5. Character ranges:
+
+'a' to 'z' = lowercase
+'A' to 'Z' = uppercase
+'0' to '9' = digits
+' ' to '~' = printable ASCII
+
+6. ASCII difference:
+
+'a' - 'A' = 32
+
+Therefore:
+lowercase to uppercase: -32
+uppercase to lowercase: +32
+
+7. Pointers and strings:
+
+char *str points to the first character of the string.
+
+When we write:
+
+str[i] = 'A';
+
+we modify the original string directly in memory.
+
+8. Why return str?
+
+Functions such as ft_strupcase, ft_strlowcase, and ft_strcapitalize modify the original string and return the same pointer.
+
+========================================
+SUMMARY
+========================================
+
+EX00: Copy a string.
+EX01: Copy a limited number of characters.
+EX02: Check letters only.
+EX03: Check digits only.
+EX04: Check lowercase only.
+EX05: Check uppercase only.
+EX06: Check printable characters.
+EX07: Convert lowercase to uppercase.
+EX08: Convert uppercase to lowercase.
+EX09: Capitalize the first letter of every word.
+EX10: Copy safely with a size limit and return the length of src.
+
+Main C02 ideas:
+- arrays
+- strings
+- '\0'
+- indexes
+- ASCII
+- character ranges
+- pointers
+- modifying strings
+- copying characters
+- return values
