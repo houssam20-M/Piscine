@@ -8,7 +8,7 @@ The goal of this Piscine is to learn the fundamentals of:
 * 💻 C Programming
 * 🧠 Algorithms and Problem Solving
 * 🛠️ Git and GitHub
-* 🧩 Unix / Linux environment
+* 🧩 Unix / Linux Environment
 
 ---
 
@@ -17,44 +17,72 @@ The goal of this Piscine is to learn the fundamentals of:
 ```text
 Piscine/
 ├── Shell00/
-│   ├── ex00/
-│   ├── ex01/
-│   ├── ex02/
-│   └── ...
-│
+├── Shell01/
 ├── C00/
-│   ├── ex00/
-│   ├── ex01/
-│   └── ...
-│
 ├── C01/
-│   ├── ex00/
-│   ├── ex01/
-│   └── ...
-│
-└── C02/
-    ├── ex00/
-    ├── ex01/
-    ├── ex02/
-    └── ...
+├── C02/
+└── C03/
 ```
 
 ---
 
 ## 📚 Progress
 
-| Module  | Status         |
-| ------- | -------------- |
-| Shell00 | ✅ Completed    |
-| C00     | 🔄 In Progress |
-| C01     | 🔄 In Progress |
-| C02     | 🔄 In Progress |
+| Module  | Status |
+| ------- | ------ |
+| Shell00 | ✅ Done |
+| Shell01 | ✅ Done |
+| C00     | ✅ Done |
+| C01     | ✅ Done |
+| C02     | ✅ Done |
+| C03     | ✅ Done |
+
+---
+
+## 📖 What I Learned
+
+### 🐚 Shell00
+- Basic Linux commands
+- File permissions
+- Navigation
+- Git basics
+
+### 🐚 Shell01
+- Shell scripting
+- Environment variables
+- File manipulation
+- Unix utilities
+
+### 💻 C00
+- First C programs
+- Functions
+- Variables
+- Loops
+- write()
+
+### 💻 C01
+- Pointers
+- Arrays
+- Memory basics
+- String manipulation
+
+### 💻 C02
+- Character functions
+- String copy
+- String capitalization
+- String transformation
+
+### 💻 C03
+- String comparison
+- String concatenation
+- String searching
+- Safe string concatenation
 
 ---
 
 ## 🧪 Compilation
 
-For C exercises, I usually compile with:
+For C exercises:
 
 ```bash
 gcc -Wall -Wextra -Werror file.c
@@ -64,19 +92,19 @@ gcc -Wall -Wextra -Werror file.c
 
 ## 🛠️ Tools
 
-* C
-* Bash / Shell
-* Git
-* GitHub
-* Linux / WSL
-* GCC
-* Norminette
+- C
+- Bash / Shell
+- Git
+- GitHub
+- Linux / WSL
+- GCC
+- Norminette
 
 ---
 
 ## 🎯 Goal
 
-The objective is to improve my programming skills, understand how computers work, and build strong foundations in **C programming and low-level development**.
+Improve my programming skills, strengthen my understanding of C, and build a solid foundation for the 42 curriculum.
 
 > Learning by doing, debugging, and never giving up. 💪
 
@@ -86,9 +114,8 @@ The objective is to improve my programming skills, understand how computers work
 
 **Houssam Oubaha**
 
-GitHub: [houssam20-M](https://github.com/houssam20-M)
+GitHub: https://github.com/houssam20-M
 
 ---
 
-⭐ This repository documents my journey through the Piscine.
-
+⭐ This repository documents my journey through the 42 / 1337 Piscine.
