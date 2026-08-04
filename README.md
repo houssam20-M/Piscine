@@ -85,6 +85,40 @@ Piscine/
 - String searching
 - Safe string concatenation
 
+### 💻 C04
+- String length calculation
+- Printing strings and integers
+- String to integer conversion (`atoi`)
+- ASCII character handling
+- Pointer traversal
+- Number parsing
+
+### 💻 C05
+- Recursive programming
+- Iterative vs recursive algorithms
+- Factorial
+- Power functions
+- Fibonacci sequence
+- Square root calculation
+- Prime number detection
+  
+### 💻 C06
+- Command-line arguments (`argc` & `argv`)
+- Printing program arguments
+- Reversing arguments
+- Sorting program arguments
+- String comparison
+
+### 💻 C07
+- Dynamic memory allocation
+- `malloc()` and `free()`
+- String duplication (`ft_strdup`)
+- Dynamic integer arrays (`ft_range`)
+- Advanced memory management
+- String joining (`ft_strjoin`)
+- Base conversion
+- Pointer-to-pointer (`char **`)
+
 ---
 
 ## 🧪 Compilation
